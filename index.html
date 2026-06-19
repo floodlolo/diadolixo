@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Memória - Multiplayer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Tela Carta -->
+    <div id="tela-carta" class="hidden">
+        <div class="tela-carta-content">
+            <h1><img src="./vc.png" width="300px"/></h1>
+            <img id="carta-tirada" src="./k1.png"/>
+            <p id="texto-carta-tirada">A carta x indica que vc é uma filha da puta arrombada desgraçada fdpA carta x indica que vc é uma filha da puta arrombada desgraçada fdpA carta x indica que vc é uma filha da puta arrombada desgraçada fdpA carta x indica que vc é uma filha da puta arrombada desgraçada fdpA carta x indica que vc é uma filha da puta arrombada desgraçada fdp</p>
+            <button id="btn-voltar-carta" class="btn" onclick="voltar()"><img src="./voltar.png" width="250px"/></button>
+        </div>
+    </div>
+    <!-- Tela Inicial - Seleção de Avatar -->
+    <div id="tela-inicial" class="tela">
+        <div class="logo-container">
+            <img class="logo-class" src="logo.png" alt="Logo" width="400px"/>
+            <img src="escolha.png" alt="Sublogo" width="300px"/>
+        </div>
+        <div class="avatares-container">
+            <div class="avatar-card" data-avatar="1" onclick="selecionarAvatar(1)">
+                <div class="avatar emoji"><img src="edu.png" /></div>
+                <div class="avatar-nome"><img src="edulogo.png" /></div>
+            </div>
+            <div class="avatar-card" data-avatar="2" onclick="selecionarAvatar(2)">
+                <div class="avatar emoji"> <img src="karla.png" /></div>
+                <div class="avatar-nome"><img src="karlalogo.png" /></div>
+            </div>
+            <div class="avatar-card" data-avatar="3" onclick="selecionarAvatar(3)">
+                <div class="avatar emoji"> <img src="ana.png" /></div>
+                <div class="avatar-nome"><img src="analogo.png" /></div>
+            </div>
+        </div>
+        <button id="btn-iniciar" class="btn" onclick="iniciarJogo()" disabled><img src="./iniciar.png" width="250px"/></button>
+    </div>
+
+    <!-- Tela do Jogo -->
+    <div id="tela-jogo" class="tela hidden">
+        <div class="cabecalho">
+            <div class="info-jogador">
+                <span id="avatar-atual" class="avatar-grande">🦁</span>
+                <span id="nome-jogador">Leão</span>
+            </div>
+            <div class="pontuacao">
+                <span>Pontuação: </span>
+                <span id="pontos">0</span>
+            </div>
+            <div class="pares-restantes">
+                <span>Pares restantes: </span>
+                <span id="pares-restantes">8</span>
+            </div>
+            <div class="tentativas">
+                <span>Foi burrona: </span>
+                <span id="tentativas">0</span>
+            </div>
+        </div>
+        
+        <div id="tabuleiro" class="tabuleiro">
+            <!-- Cartas serão geradas via JavaScript -->
+        </div>
+
+        <button class="btn btn-voltar" onclick="voltarTelaInicial()"><img src="./voltar.png" width="180px"/></button>
+    </div>
+
+    <!-- Tela de Resultados -->
+    <div id="tela-resultados" class="tela hidden">
+        <h1><img src="./jogo.png" width="400px" /></h1>
+        <div class="resultado-jogador">
+            <span id="resultado-avatar" class="avatar-grande">🦁</span>
+            <span id="resultado-nome">Leão</span>
+        </div>
+        <div class="pontuacao-final">
+            <span><img src="./pont.png" width="250px" /></span>
+            <span id="pontos-finais">0</span>
+        </div>
+        <div class="ranking">
+            <h2><img src="./ranking.png" width="200px" /></h2>
+            <div id="lista-ranking"></div>
+        </div>
+        <div class="botoes-resultados">
+            <button class="btn btn-voltar" onclick="voltarTelaInicial()"><img src="./trocar.png" width="180px"/></button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
